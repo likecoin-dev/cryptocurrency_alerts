@@ -1,26 +1,33 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/bitters/app/assets/stylesheets/base';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+
+@mixin border {
+  border: solid 1px yellow;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+#hero-unit {
+  background-color: black;
+  width: 100%;
+  #header_container {
+    @include outer-container;
+    @include border;
+    header {
+      width: 100%;
+      min-height: 75px;
+      background-color: red; 
+    }
+  }
+    #alertspace_container {
+      @include outer-container; 
+      @include border;
+      #alertspace {
+      width: 100%;
+      min-height: 175px;
+      background-color: purple;
+    }
   }
 }
