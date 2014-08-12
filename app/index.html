@@ -20,6 +20,8 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    
   </head>
   <body>
 
@@ -36,20 +38,12 @@
         </div>
     </div>
 
-    <div id="charts_container">
+    <div id="main">
 
-        <div id="btc_container">
-            <div id="btc_chart"></div>
-            <div id="btc_feed"></div>
-        </div>
-        <div id="doge_container">
-            <div id="doge_chart"></div>
-            <div id="doge_feed"></div>
-        </div>
-        <div id="ltc_container">
-            <div id="ltc_chart"></div>
-            <div id="ltc_feed"></div>
-        </div>
+
+
+
+
     </div>
 
     <div id="footer_container">
@@ -58,11 +52,51 @@
         </footer>
     </div>
 
+    <script type="text/x-handlebars-template" id="login_template">
+        <div id="login_outer_shell">
+            <div id="login_inner_shell">
+                <form class="form1" >
+                    <input class="signup" id="uname" name="uname" placeholder="Name" type=
+                    "text">
+                    <input class="signup" id="password" name="password" placeholder=
+                    "Password" type="text">
+                    <input class="signup" id="email" name="email" placeholder="Email" type=
+                    "text">
+                    <input type="submit" class='signUp' value="Sign Up">
+                </form><br>
+
+                <form class="form2" >
+                    <input class="signin" id="rname" name="rname" placeholder="Name" type=
+                    "text">
+                    <input class="signin" id="rpassword" name="rpassword" placeholder=
+                    "Password" type="text">
+                    <input type="submit" id='signIn' value="Sign In">
+                </form>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="currency_template">
+        <div class="btc_container">
+            <div class="btc_chart"></div>
+            <div class="btc_feed"></div>
+        </div>
+        <div class="doge_container">
+            <div class="doge_chart"></div>
+            <div class="doge_feed"></div>
+        </div>
+        <div class="ltc_container">
+            <div class="ltc_chart"></div>
+            <div class="ltc_feed"></div>
+        </div>
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="../bower_components/underscore/underscore.js"></script>
     <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/backbone/backbone.js"></script>
     <!-- endbower -->
     <!-- endbower -->
     <!-- endbuild -->
@@ -70,6 +104,10 @@
     <script src="http://code.highcharts.com/highcharts.js"></script>
 
         <!-- build:js scripts/main.js -->
+        
+        <script src="scripts/views/login_view.js"></script>
+        <script src="scripts/views/home_view.js"></script>
+        <script src="scripts/routes/routes.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

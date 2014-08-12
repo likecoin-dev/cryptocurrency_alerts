@@ -44,18 +44,18 @@ body {
   }
 }
 
-#charts_container {
+#main {
   width: 100%;
   background-color: $lightblack;
   @include border;
-  #btc_container {
+  .btc_container {
     @include outer-container;
     $mobile: new-breakpoint(max-width 500px 4);
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
     @include border;
-    #btc_chart {
+    .btc_chart {
       @include span-columns(7);
       height: 250px; 
       @include border; 
@@ -64,7 +64,7 @@ body {
         display: none;
       }
     }
-    #btc_feed {
+    .btc_feed {
       @include span-columns(5);
       height: 250px; 
       @include border;
@@ -74,14 +74,14 @@ body {
       }
     }
   }
-  #doge_container {
+  .doge_container {
     @include outer-container;
     $mobile: new-breakpoint(max-width 500px 4);
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
     @include border;
-    #doge_chart {
+    .doge_chart {
       @include span-columns(7);
       height: 250px; 
       @include border; 
@@ -90,7 +90,7 @@ body {
         display: none;
       }
     }
-    #doge_feed {
+    .doge_feed {
       @include span-columns(5);
       height: 250px; 
       @include border;
@@ -100,13 +100,13 @@ body {
       }
     }
   }
-  #ltc_container {
+  .ltc_container {
     @include outer-container;
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
     @include border;
-    #ltc_chart {
+    .ltc_chart {
       @include span-columns(7);
       height: 250px; 
       @include border; 
@@ -115,7 +115,7 @@ body {
         display: none;
       }
     }
-    #ltc_feed {
+    .ltc_feed {
       @include span-columns(5);
       height: 250px; 
       @include border;
@@ -123,6 +123,32 @@ body {
       @include media($mobile) {
         @include span-columns(12); 
       }
+    }
+  }
+}
+
+.login_container {
+  width: 100%;
+  min-height: 1000px;
+  // background: url(../images/landscape1.jpg) no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  #login_outer_shell {
+    width: 400px;
+    // height: 700px;
+    margin: 0 auto;
+    padding-top: 200px; 
+    #login_inner_shell {
+      width: 330px;
+      // height: 485px;
+      margin: 0 auto;
+      padding: 35px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, .2);
+      // .co_name{
+      // font-weight: bold;
+      // font-size: 40px;
+      // }
     }
   }
 }
