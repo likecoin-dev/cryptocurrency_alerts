@@ -10,13 +10,18 @@ var PageRouter = Backbone.Router.extend({
   },
 
   home_page: function () {
+  	console.log(currentUser);
+  	if(!currentUser) return start.navigate('login', {trigger: true});
+  	showUser(currentUser);
     var home_view = new HomeView();
     $('#main').html(home_view.el);
   },
 
 	login_page: function () {
+		if(currentUser) return start.navigate("", {trigger: true});
   	var login_view = new LogInView();
   	$('#main').html(login_view.el);
+  	new LogInView();
 	}
 
 });

@@ -18,6 +18,10 @@ body {
   background-color: $darkblack;
 }
 
+li {
+  display: inline;
+}
+
 #hero-unit {
   width: 100%;
   #header_container {
@@ -26,9 +30,31 @@ body {
     @include border;
     header {
       @include outer-container;
-      min-height: 75px;
+      height: 50px;
       background-color: $darkblack;
       @include border;
+      text-align: center;
+      color: white;
+      .head_left {
+        float: left;
+      }
+      .head_center {
+        float: left;
+      }
+      .head_right {
+        float: right;
+        width: 400px;
+        @include border;
+        .header_p {
+          float: right;
+        }
+        .userfield {
+          float: right;
+        }
+        .logout {
+          float: right;
+        }
+      }
     }
   }
   #alertspace_container {

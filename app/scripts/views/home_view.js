@@ -15,6 +15,10 @@ var HomeView = Backbone.View.extend({
 		console.log("in home render function")
 		var source = $("#currency_template").html();
 		this.$el.html(source)
+
+		$('#hero-unit').show();
+		$('footer').show();
+
 		return this;
 	}
 

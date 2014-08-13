@@ -3,7 +3,8 @@ var LogInView = Backbone.View.extend({
 	className: "login_container",
 
 	events: {
-
+		"submit .form1": 'signUpUser',
+		"submit .form2": 'logInUser'
 	},
 
 	initialize: function() {
@@ -55,7 +56,7 @@ var LogInView = Backbone.View.extend({
 		  success: function(user) {
 		    // Go HOME dude
 		    currentUser = Parse.User.current();
-		    window.post_router.navigate("", { trigger: true });
+		    start.navigate("", { trigger: true });
 		    console.log("Im Logged In");
 		  },
 		  error: function(user, error) {
