@@ -3,7 +3,8 @@ var LogInView = Backbone.View.extend({
 	className: "login_container",
 
 	events: {
-
+		"submit .form1": 'signUpUser',
+		"submit .form2": 'logInUser'
 	},
 
 	initialize: function() {
@@ -55,7 +56,7 @@ var LogInView = Backbone.View.extend({
 		  success: function(user) {
 		    // Go HOME dude
 		    currentUser = Parse.User.current();
-		    window.post_router.navigate("", { trigger: true });
+		    start.navigate("", { trigger: true });
 		    console.log("Im Logged In");
 		  },
 		  error: function(user, error) {
@@ -87,6 +88,10 @@ var HomeView = Backbone.View.extend({
 		console.log("in home render function")
 		var source = $("#currency_template").html();
 		this.$el.html(source)
+
+		$('#hero-unit').show();
+		$('footer').show();
+
 		return this;
 	}
 
@@ -104,13 +109,18 @@ var PageRouter = Backbone.Router.extend({
   },
 
   home_page: function () {
+  	console.log(currentUser);
+  	if(!currentUser) return start.navigate('login', {trigger: true});
+  	showUser(currentUser);
     var home_view = new HomeView();
     $('#main').html(home_view.el);
   },
 
 	login_page: function () {
+		if(currentUser) return start.navigate("", {trigger: true});
   	var login_view = new LogInView();
   	$('#main').html(login_view.el);
+  	new LogInView();
 	}
 
 });
@@ -118,8 +128,22 @@ var PageRouter = Backbone.Router.extend({
 
 Parse.initialize("q5Xdc0dSvnGaiBaMwsKjL4YqxcYm4AxryYeye9Y6", "Q0XnK0NrdWzbmlXavUs005d23Y976wIBcHsXZYSr");
 
+var currentUser = Parse.User.current();
 
+var showUser = function (user) {
+  var name = user.get('username');
+  $('.userfield').text(name);
+};
+
+$('.logout').on('click', function () {
+  Parse.User.logOut();
+  currentUser = Parse.User.current();
+  start.navigate('login', {trigger: true});
+});
+
+$('.alerts').on('click', function (e) {
+	$('#alertspace_container').toggle();
+});
 
 var start = new PageRouter();
 Backbone.history.start();
-
