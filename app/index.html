@@ -17,12 +17,19 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+    <!-- animate.css -->
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css"/>
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
     <!-- parse -->
     <script src="//www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+
+    <!--Firebase-->
+    <script src="https://cdn.firebase.com/js/client/1.0.18/firebase.js"></script>
+
   </head>
   <body>
 
@@ -49,19 +56,21 @@
         </div>
     </div>
 
+
     <div id="main">
 
-
-
-
-
     </div>
+
 
     <div id="footer_container">
         <footer>
             
         </footer>
     </div>
+
+    <script type="text/x-handlebars-template" id="btc_feed">
+             <li class="value_feed">{{value}}</li>
+    </script>
 
     <script type="text/x-handlebars-template" id="login_template">
         <div id="login_outer_shell">
@@ -90,7 +99,33 @@
     <script type="text/x-handlebars-template" id="currency_template">
         <div class="btc_container">
             <div class="btc_chart"></div>
-            <div class="btc_feed"></div>
+            <div class="btc_feed">
+                <div class="btc_info">Bitcoin Prices</div>
+                
+                <div id="btc_bid_action">
+                    <div id="btc_bid_title">Bid</div>
+                    <div id="btc_bid_color" class="{{value_color}}"></div>
+                    <div id="btc_bid_action_container">
+                        <ul class="btc_bid_action"></ul>
+                    </div>
+                 </div>
+                 
+                <div id="btc_ask_action">
+                    <div id="btc_ask_title">Ask</div>
+                    <div id="btc_ask_color" class="{{value_color}}"></div>
+                    <div id="btc_ask_action_container">
+                        <ul class="btc_ask_action"></ul>
+                    </div>
+                </div>
+                 
+                 <div id="btc_last_action">
+                    <div id="btc_last_title">Last</div>
+                    <div id="btc_last_color" class="{{value_color}}"></div>
+                    <div id="btc_last_action_container">
+                        <ul class="btc_last_action" ></ul>
+                    </div>
+                 </div>
+            </div>
         </div>
         <div class="doge_container">
             <div class="doge_chart"></div>
@@ -112,13 +147,19 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script src="http://code.highcharts.com/highcharts.js"></script>
+    
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
         <!-- build:js scripts/main.js -->
         
         <script src="scripts/views/login_view.js"></script>
         <script src="scripts/views/home_view.js"></script>
         <script src="scripts/routes/routes.js"></script>
+        <script src="scripts/charts.js"></script>
+        <script src="scripts/doge.js"></script>
+        <script src="scripts/ltc.js"></script>
+        <script src="scripts/btc.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

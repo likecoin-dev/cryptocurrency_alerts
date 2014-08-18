@@ -8,6 +8,12 @@ $darkblack: #323232;
 $lightblack: #424242;
 $deepblue: #002855;
 
+$bid: #2b908f;
+$ask: #90ee7e;
+$last: #f45b5b;
+$green: #90ee7e;
+$red: #f45b5b;
+
 $mobile: new-breakpoint(max-width 500px 4);
 
 @mixin border {
@@ -82,21 +88,102 @@ li {
     margin-bottom: 20px;
     @include border;
     .btc_chart {
-      @include span-columns(7);
-      height: 250px; 
+      @include span-columns(8);
+      height: 350px; 
       @include border; 
-      background-color: $deepblue;
       @include media($mobile) {
         display: none;
       }
     }
     .btc_feed {
-      @include span-columns(5);
-      height: 250px; 
+      @include span-columns(4);
+      height: 350px;
+      color: white;
       @include border;
-      background-color: $deepblue;
+      background-color: $darkblack;
       @include media($mobile) {
-        @include span-columns(12); 
+        @include span-columns(12);
+      }
+      .btc_info {
+        @include span-columns(12);
+        height: 25px;
+        text-align: center;
+        border-bottom: solid 1px white;
+      }
+      #btc_bid_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $bid;
+        text-align: center;
+        #btc_bid_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #btc_bid_color {
+          @include span-columns(1);
+          @include border;
+          height: 300px;
+        }
+        #btc_bid_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #btc_ask_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $ask;
+        text-align: center;
+        #btc_ask_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #btc_ask_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #btc_ask_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #btc_last_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $last;
+        text-align: center;
+        #btc_last_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #btc_last_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #btc_last_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -108,7 +195,7 @@ li {
     margin-bottom: 20px;
     @include border;
     .doge_chart {
-      @include span-columns(7);
+      @include span-columns(8);
       height: 250px; 
       @include border; 
       background-color: $deepblue;
@@ -117,7 +204,7 @@ li {
       }
     }
     .doge_feed {
-      @include span-columns(5);
+      @include span-columns(4);
       height: 250px; 
       @include border;
       background-color: $deepblue;
@@ -133,7 +220,7 @@ li {
     margin-bottom: 20px;
     @include border;
     .ltc_chart {
-      @include span-columns(7);
+      @include span-columns(8);
       height: 250px; 
       @include border; 
       background-color: $deepblue;
@@ -142,7 +229,7 @@ li {
       }
     }
     .ltc_feed {
-      @include span-columns(5);
+      @include span-columns(4);
       height: 250px; 
       @include border;
       background-color: $deepblue;
@@ -191,4 +278,10 @@ li {
   }
 }
 
+ .value_color_green {
+    background-color: $green;
+  }
+  .value_color_red {
+    background-color: $red;
+  }
 
