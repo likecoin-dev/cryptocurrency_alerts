@@ -196,20 +196,101 @@ li {
     @include border;
     .doge_chart {
       @include span-columns(8);
-      height: 250px; 
-      @include border; 
-      background-color: $deepblue;
+      height: 350px; 
+      @include border;
       @include media($mobile) {
         display: none;
       }
     }
     .doge_feed {
       @include span-columns(4);
-      height: 250px; 
+      height: 350px;
+      color: white;
       @include border;
-      background-color: $deepblue;
+      background-color: $darkblack;
       @include media($mobile) {
-        @include span-columns(12); 
+        @include span-columns(12);
+      }
+      .doge_info {
+        @include span-columns(12);
+        height: 25px;
+        text-align: center;
+        border-bottom: solid 1px white;
+      }
+      #doge_bid_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $bid;
+        text-align: center;
+        #doge_bid_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #doge_bid_color {
+          @include span-columns(1);
+          @include border;
+          height: 300px;
+        }
+        #doge_bid_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #doge_ask_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $ask;
+        text-align: center;
+        #doge_ask_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #doge_ask_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #doge_ask_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #doge_last_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $last;
+        text-align: center;
+        #doge_last_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #doge_last_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #doge_last_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -221,20 +302,101 @@ li {
     @include border;
     .ltc_chart {
       @include span-columns(8);
-      height: 250px; 
-      @include border; 
-      background-color: $deepblue;
+      height: 350px; 
+      @include border;
       @include media($mobile) {
         display: none;
       }
     }
     .ltc_feed {
       @include span-columns(4);
-      height: 250px; 
+      height: 350px;
+      color: white;
       @include border;
-      background-color: $deepblue;
+      background-color: $darkblack;
       @include media($mobile) {
-        @include span-columns(12); 
+        @include span-columns(12);
+      }
+      .ltc_info {
+        @include span-columns(12);
+        height: 25px;
+        text-align: center;
+        border-bottom: solid 1px white;
+      }
+      #ltc_bid_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $bid;
+        text-align: center;
+        #ltc_bid_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #ltc_bid_color {
+          @include span-columns(1);
+          @include border;
+          height: 300px;
+        }
+        #ltc_bid_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #ltc_ask_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $ask;
+        text-align: center;
+        #ltc_ask_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #ltc_ask_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #ltc_ask_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
+      }
+      #ltc_last_action {
+        @include span-columns(4);
+        @include border; 
+        height: 325px;
+        color: $last;
+        text-align: center;
+        #ltc_last_title {
+          @include span-columns(12);
+          border-bottom: solid 1px white;
+          height: 25px;
+        }
+        #ltc_last_color {
+          @include span-columns(1);
+          @include border; 
+          height: 300px;
+        }
+        #ltc_last_action_container {
+          @include span-columns(11);
+          @include border;
+          height: 300px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          font-size: 18px;
+        }
       }
     }
   }
