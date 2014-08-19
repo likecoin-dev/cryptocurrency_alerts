@@ -9,24 +9,24 @@ bitcoinRef.child("ask").on("value", showAskPrice);
 bitcoinRef.child("last").on("value", showLastPrice); 
 bitcoinRef.child("bid").on("value", showBidPrice);
 
-function addBitCoin_dataPoint() { 
+function addBitcoin_dataPoint() { 
     var x = (new Date()).getTime(); // current time
     var o = btc_bid[btc_bid.length-1];
     var y = parseFloat(o.value);   
-    bid_series.addPoint([x, y], false, true);
+    btc_bid_series.addPoint([x, y], false, true);
 		
 		var o1 = btc_ask[btc_ask.length-1];
     var y1 = parseFloat(o1.value);
-    ask_series.addPoint([x, y1], false, true); 
+    btc_ask_series.addPoint([x, y1], false, true); 
 
 		var o2 = btc_last[btc_last.length-1];
     var y2 = parseFloat(o2.value);
-    last_series.addPoint([x, y2], true, true);
+    btc_last_series.addPoint([x, y2], true, true);
 } 
 
-var bid_series = null;
-var ask_series = null;
-var last_series = null; 
+var btc_bid_series;
+var btc_ask_series;
+var btc_last_series; 
 
 $(function () {
 	    Highcharts.setOptions({
@@ -39,10 +39,10 @@ $(function () {
 	            events : {
 	                load : function () {
 	                    // set up the updating of the chart each second
-	                    bid_series = this.series[0];
-	                    ask_series = this.series[1];
-	                    last_series = this.series[2];
-	                    setInterval(addBitCoin_dataPoint , 2000);
+	                    btc_bid_series = this.series[0];
+	                    btc_ask_series = this.series[1];
+	                    btc_last_series = this.series[2];
+	                    setInterval(addBitcoin_dataPoint , 2000);
 	                }
 	            }
 	        } ,
