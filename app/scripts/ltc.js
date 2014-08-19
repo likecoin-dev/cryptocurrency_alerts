@@ -6,9 +6,9 @@ ltc_last = [];
 
 var litecoinRef = new Firebase("https://publicdata-cryptocurrency.firebaseio.com/litecoin");
 
-litecoinRef.child("bid").on("value", showAskPrice);
-litecoinRef.child("ask").on("value", showLastPrice);
-litecoinRef.child("last").on("value", showBidPrice);
+litecoinRef.child("bid").on("value", showBidPrice);
+litecoinRef.child("ask").on("value", showAskPrice);
+litecoinRef.child("last").on("value", showLastPrice);
 
 function addLitecoin_dataPoint() { 
     var x = (new Date()).getTime(); // current time

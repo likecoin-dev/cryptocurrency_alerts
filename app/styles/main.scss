@@ -64,6 +64,7 @@ li {
     }
   }
   #alertspace_container {
+    display: none;
     width: 100%;
     background-color: $lightblack;
     @include border;
@@ -210,6 +211,7 @@ li {
       background-color: $darkblack;
       @include media($mobile) {
         @include span-columns(12);
+        text-align: center;
       }
       .doge_info {
         @include span-columns(12);
@@ -440,6 +442,9 @@ li {
   }
 }
 
+.value_feed {
+  display: block;
+}
  .value_color_green {
     background-color: $green;
   }
