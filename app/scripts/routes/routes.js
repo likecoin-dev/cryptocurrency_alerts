@@ -10,7 +10,6 @@ var PageRouter = Backbone.Router.extend({
   },
 
   home_page: function () {
-  	console.log(currentUser);
   	if(!currentUser) return start.navigate('login', {trigger: true});
   	showUser(currentUser);
     var home_view = new HomeView();

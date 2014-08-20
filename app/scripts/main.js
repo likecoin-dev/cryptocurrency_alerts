@@ -19,3 +19,22 @@ $('.alerts').on('click', function (e) {
 
 var start = new PageRouter();
 Backbone.history.start();
+
+$('#setalerts').on('submit', function (e) {
+	e.preventDefault();
+	console.log('form submitted');
+	var alert_trigger = new Alert({
+		currency: $('input[name="currency"]:checked').val(),
+		limit: $('input[name="limit"]:checked').val(),
+		price: $('input[name="price"]').val(),
+		user: Parse.User.current(),
+    ACL: new Parse.ACL(Parse.User.current())
+	});
+	alert_trigger.save(null, {
+    success: function() {
+    	console.log("alert saved");
+      $('#setalerts').trigger('reset');
+    }
+  });
+});
+

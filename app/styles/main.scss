@@ -14,7 +14,7 @@ $last: #f45b5b;
 $green: #90ee7e;
 $red: #f45b5b;
 
-$mobile: new-breakpoint(max-width 500px 4);
+$mobile: new-breakpoint(max-width 700px 4);
 
 @mixin border {
   border: solid 1px white;
@@ -64,7 +64,7 @@ li {
     }
   }
   #alertspace_container {
-    display: none;
+    // display: none;
     width: 100%;
     background-color: $lightblack;
     @include border;
@@ -83,7 +83,7 @@ li {
   @include border;
   .btc_container {
     @include outer-container;
-    $mobile: new-breakpoint(max-width 500px 4);
+    @include media($mobile);
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -190,7 +190,6 @@ li {
   }
   .doge_container {
     @include outer-container;
-    $mobile: new-breakpoint(max-width 500px 4);
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -407,28 +406,80 @@ li {
 .login_container {
   width: 100%;
   min-height: 1000px;
-  // background: url(../images/landscape1.jpg) no-repeat center center fixed;
+  background: url(../images/skyline2.jpg) no-repeat center center fixed;
   background-size: cover;
   text-align: center;
+  #login_head_container {
+    width: 100%; 
+    background-color: $darkblack;
+    #login_head {
+      @include outer-container;
+      @include border; 
+      height: 50px;
+    }
+  }
   #login_outer_shell {
-    width: 400px;
-    // height: 700px;
-    margin: 0 auto;
-    padding-top: 200px; 
-    #login_inner_shell {
-      width: 330px;
-      // height: 485px;
-      margin: 0 auto;
-      padding: 35px;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, .2);
-      // .co_name{
-      // font-weight: bold;
-      // font-size: 40px;
-      // }
+    @include outer-container;
+    // @include media($mobile){
+    //     margin: 0 auto;
+    //   }
+    height: 500px;
+    @include border;
+    // margin: 0 auto;
+    padding-top: 75px; 
+    #login_info_box {
+      @include span-columns(6);
+      @include media($mobile){
+        margin: 0 auto;
+        float: none;
+      }
+      @include border;
+      height: 425px;
+      text-align: left;
+      .login_hone {
+        // font-family:
+        font-size: 42px;
+        color: white;
+        font-weight: bold;
+      }
+      .login_htwo {
+        // font-family:
+        float: left;
+        font-size: 25px;
+        color: white;
+        margin-top: 40px;
+      }
+    }
+    #login_inner_shell_container {
+      @include span-columns(6);
+      @include media($mobile){
+        float: none;
+        margin: 0 auto !important;
+        min-width: 330px;
+      }
+      @include border;
+      height: 425px;
+      #login_inner_shell {
+
+        float: right;
+        width: 330px;
+        // height: 485px;
+        margin: 0 auto;
+        padding: 35px;
+        border-radius: 10px;
+        background-color: $darkblack;
+        // .co_name{
+        // font-weight: bold;
+        // font-size: 40px;
+        // }
+      }
+
     }
   }
 }
+
+
+
 
 #footer_container {
   width: 100%;
@@ -453,3 +504,27 @@ li {
   background-color: $red;
 }
 
+.formtext {
+  color: white;
+}
+
+  // <div id="login_inner_shell">
+  //                   <form class="form1" >
+  //                       <input class="signup" id="uname" name="uname" placeholder="Name" type=
+  //                       "text">
+  //                       <input class="signup" id="password" name="password" placeholder=
+  //                       "Password" type="text">
+  //                       <input class="signup" id="email" name="email" placeholder="Email" type=
+  //                       "text">
+  //                       <input type="submit" class='signUp' value="Sign Up">
+  //                   </form><br>
+
+  //                   <form class="form2" >
+  //                       <input class="signin" id="rname" name="rname" placeholder="Name" type=
+  //                       "text">
+  //                       <input class="signin" id="rpassword" name="rpassword" placeholder=
+  //                       "Password" type="text">
+  //                       <input type="submit" id='signIn' value="Sign In">
+  //                   </form>
+  //               </div>
+  //           </div>

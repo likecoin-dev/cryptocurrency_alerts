@@ -51,7 +51,18 @@
         </div>
         <div id="alertspace_container">
             <div id="alertspace">
-                
+                <form id="setalerts">
+                    <p class="formtext">If</p>
+                    <input type="radio" name="currency" id="" value="BTC">Bitcoin<br>
+                    <input type="radio" name="currency" value="LTC">Litecoin<br>
+                    <input type="radio" name="currency" value="DOGE">Dogecoin
+                    <p class="formtext">Passes</p>
+                    <input type="radio" name="limit" value="above">Above<br>
+                    <input type="radio" name="limit" value="below">Below<br>
+                    <p class="formtext">The Price Of</p>
+                    <input type="text" name="price">
+                    <input type="submit" value="Set Alert">
+                </form>
             </div>
         </div>
     </div>
@@ -64,7 +75,7 @@
 
     <div id="footer_container">
         <footer>
-            
+            Binoculars designed by <a href="http://www.thenounproject.com/creatoridimmagine">Creatorid'immagine</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
         </footer>
     </div>
 
@@ -81,25 +92,36 @@
     </script>
 
     <script type="text/x-handlebars-template" id="login_template">
+        <div id="login_head_container">
+            <div id="login_head">
+                <img class="binos" src="../images/icon7215.png">
+            </div>
+        </div>
         <div id="login_outer_shell">
-            <div id="login_inner_shell">
-                <form class="form1" >
-                    <input class="signup" id="uname" name="uname" placeholder="Name" type=
-                    "text">
-                    <input class="signup" id="password" name="password" placeholder=
-                    "Password" type="text">
-                    <input class="signup" id="email" name="email" placeholder="Email" type=
-                    "text">
-                    <input type="submit" class='signUp' value="Sign Up">
-                </form><br>
+            <div id="login_info_box">
+                <h1 class="login_hone">Welcome to CoinSpy.</h1>
+                <h2 class="login_htwo">Crypotcurrecy alerts made easy.<br>Get SMS and email price alerts for Bitcoin, Dogecoin, and Litecoin.</h2>
+            </div>
+            <div id="login_inner_shell_container">
+                <div id="login_inner_shell">
+                    <form class="form1" >
+                        <input class="signup" id="uname" name="uname" placeholder="Name" type=
+                        "text">
+                        <input class="signup" id="password" name="password" placeholder=
+                        "Password" type="text">
+                        <input class="signup" id="email" name="email" placeholder="Email" type=
+                        "text">
+                        <input type="submit" class='signUp' value="Sign Up">
+                    </form><br>
 
-                <form class="form2" >
-                    <input class="signin" id="rname" name="rname" placeholder="Name" type=
-                    "text">
-                    <input class="signin" id="rpassword" name="rpassword" placeholder=
-                    "Password" type="text">
-                    <input type="submit" id='signIn' value="Sign In">
-                </form>
+                    <form class="form2" >
+                        <input class="signin" id="rname" name="rname" placeholder="Name" type=
+                        "text">
+                        <input class="signin" id="rpassword" name="rpassword" placeholder=
+                        "Password" type="text">
+                        <input type="submit" id='signIn' value="Sign In">
+                    </form>
+                </div>
             </div>
         </div>
     </script>
@@ -219,6 +241,7 @@
         <script src="scripts/views/login_view.js"></script>
         <script src="scripts/views/home_view.js"></script>
         <script src="scripts/routes/routes.js"></script>
+        <script src="scripts/model/model.js"></script>
         <script src="scripts/charts.js"></script>
         <script src="scripts/doge.js"></script>
         <script src="scripts/ltc.js"></script>
