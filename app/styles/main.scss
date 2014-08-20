@@ -36,30 +36,68 @@ li {
     @include border;
     header {
       @include outer-container;
+      @include border;
+      height: 75px;
+      background-color: $darkblack;
+      #header_name {
+        @include span-columns(12);
+        @include border;
+        height: 65px;
+        margin-top: 10px;
+        .binos_header {
+          width: 40px;
+          height: 40px;
+          border-radius: 20px;
+          background-color: white;
+          float: left;
+        }
+        .header_name {
+          color: white;
+          font-size: 30px;
+          font-family: Montserrat;
+          float: left;
+          margin-left: 10px;
+        }
+      }
+    }
+    #head_one {
+      @include outer-container;
       height: 50px;
       background-color: $darkblack;
       @include border;
       text-align: center;
       color: white;
       .head_left {
-        float: left;
+        @include span-columns(4);
+        @include border;
+        height: 50px;
       }
       .head_center {
-        float: left;
+        @include span-columns(4);
+        @include border;
+        height: 50px;
       }
       .head_right {
-        float: right;
-        width: 400px;
+        @include span-columns(4);
         @include border;
-        .header_p {
-          float: right;
-        }
+        height: 25px;
         .userfield {
+          color: white;
           float: right;
         }
         .logout {
           float: right;
+          width: 80px;
+          background: none;
+          cursor: pointer;
+          font-size: 16px;
+          color: #fff;
+          border: 1px solid #0f0;
+          margin: 0px;
+          padding: 0px;
         }
+
+        
       }
     }
   }
@@ -80,7 +118,7 @@ li {
 #main {
   width: 100%;
   background-color: $lightblack;
-  @include border;
+  // @include border;
   .btc_container {
     @include outer-container;
     @include media($mobile);
@@ -405,7 +443,7 @@ li {
 
 .login_container {
   width: 100%;
-  min-height: 1000px;
+  min-height: 1200px;
   background: url(../images/skyline2.jpg) no-repeat center center fixed;
   background-size: cover;
   text-align: center;
@@ -447,6 +485,7 @@ li {
         color: white;
         font-weight: bold;
         margin-top: 50px;
+        font-family: Montserrat;
       }
       .login_htwo {
         // font-family:
