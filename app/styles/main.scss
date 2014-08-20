@@ -411,11 +411,16 @@ li {
   text-align: center;
   #login_head_container {
     width: 100%; 
-    background-color: $darkblack;
+    background-color: white;
     #login_head {
       @include outer-container;
       @include border; 
-      height: 50px;
+      height: 70px;
+      .binos {
+        height: 70px;
+        width: 70px;
+        color: white;
+      }
     }
   }
   #login_outer_shell {
@@ -424,7 +429,7 @@ li {
     //     margin: 0 auto;
     //   }
     height: 500px;
-    @include border;
+    // @include border;
     // margin: 0 auto;
     padding-top: 75px; 
     #login_info_box {
@@ -433,18 +438,19 @@ li {
         margin: 0 auto;
         float: none;
       }
-      @include border;
+      // @include border;
       height: 425px;
-      text-align: left;
+      text-align: right;
       .login_hone {
         // font-family:
         font-size: 42px;
         color: white;
         font-weight: bold;
+        margin-top: 50px;
       }
       .login_htwo {
         // font-family:
-        float: left;
+        // float: right;
         font-size: 25px;
         color: white;
         margin-top: 40px;
@@ -457,11 +463,11 @@ li {
         margin: 0 auto !important;
         min-width: 330px;
       }
-      @include border;
+      // @include border;
       height: 425px;
       #login_inner_shell {
 
-        float: right;
+        float: left;
         width: 330px;
         // height: 485px;
         margin: 0 auto;
