@@ -97,6 +97,7 @@ var HomeView = Backbone.View.extend({
 
 });
 
+
 var PageRouter = Backbone.Router.extend({
 
   routes: {
@@ -109,7 +110,6 @@ var PageRouter = Backbone.Router.extend({
   },
 
   home_page: function () {
-  	console.log(currentUser);
   	if(!currentUser) return start.navigate('login', {trigger: true});
   	showUser(currentUser);
     var home_view = new HomeView();
@@ -125,6 +125,27 @@ var PageRouter = Backbone.Router.extend({
 
 });
  
+
+var Alert = Parse.Object.extend ({
+
+	className: "Currency_alerts",
+
+	idAttribute: "objectId",
+
+	defaults: {
+		currency: '',
+		limit: '',
+		price: ''
+
+	}
+
+});
+
+var Allalerts = Parse.Collection.extend ({
+	model: Alert 
+	
+});
+
 
 
 /**
@@ -919,3 +940,22 @@ $('.alerts').on('click', function (e) {
 
 var start = new PageRouter();
 Backbone.history.start();
+
+$('#setalerts').on('submit', function (e) {
+	e.preventDefault();
+	console.log('form submitted');
+	var alert_trigger = new Alert({
+		currency: $('input[name="currency"]:checked').val(),
+		limit: $('input[name="limit"]:checked').val(),
+		price: $('input[name="price"]').val(),
+		user: Parse.User.current(),
+    ACL: new Parse.ACL(Parse.User.current())
+	});
+	alert_trigger.save(null, {
+    success: function() {
+    	console.log("alert saved");
+      $('#setalerts').trigger('reset');
+    }
+  });
+});
+
