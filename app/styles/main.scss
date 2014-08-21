@@ -37,6 +37,7 @@ li {
     width: 100%;
     background-color: $darkblack;
     border-bottom: solid 4px $lighterblue;
+
     // @include border;
     header {
       @include outer-container;
@@ -122,66 +123,129 @@ li {
       min-height: 175px;
       background-color: $lightblack;
       @include border;
-      #alert_left_container{
-        @include span-columns(4);
+      #alert_top_container{
+        @include span-columns(12);
         // background-color: $lightgrey;
         // text-align: left;
+        @include border;
         color: $green;
         .formtext {
           color: $green;
           font-family: Montserrat;
-          font-size: 22px;
+          font-size: 20px;
           // font-weight: bold;
           text-align: center;
         }
         #alert_when {
-          width: 100%;
+          @include span-columns(2.5);
           @include border;
           // height: 25px;
+
         }
         #alert_params {
-          width: 100%;
+          @include span-columns(2.5);
           @include border;
           // height: 25px;
         }
         #alert_price {
-          width: 100%;
+          @include span-columns(2.5);
           @include border;
           // height: 25px;
+          .price_text {
+            float: right;
+            width: 80px;
+            height: 30px;
+          }
         }
         #alert_type {
-          width: 100%;
+          @include span-columns(2.5);
           @include border;
           // height: 25px;
         }
         #alert_set {
-          width: 100%;
+          @include span-columns(2.0);
+          @include border;
+          // height: 25px;
+          text-align: center;
+          .set_alert {
+            background: $lighterblue;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: Montserrat;
+            color: $green;
+            margin: 8px;
+            padding: 8px;
+            // border: $green;
+          }
+        }
+      }
+      #alert_bottom_container {
+        @include span-columns(12);
+        @include border;
+        .alert_when {
+          @include span-columns(2.5);
           @include border;
           // height: 25px;
         }
-      }
-      #alert_right_container {
-        @include span-columns(8);
+        .alert_params {
+          @include span-columns(2.5);
+          @include border;
+          // height: 25px;
+        }
+        .alert_price {
+          @include span-columns(2.5);
+          @include border;
+          // height: 25px;
+          // .price_text {
+          //   float: right;
+          //   width: 80px;
+          //   height: 30px;
+          // }
+        }
+        .alert_type {
+          @include span-columns(2.5);
+          @include border;
+          // height: 25px;
+        }
+        .alert_set {
+          @include span-columns(2.0);
+          @include border;
+          // height: 25px;
+          text-align: center;
+        }
       }
     }
   }
 }
 
+.at {
+  color: white;
+  float: right;
+  height: 35px;
+  width: 80px;
+  @include border;
+}
+
+
 #main {
   width: 100%;
   background-color: $lightblack;
   // @include border;
+  .spacer {
+    width: 100%;
+    height: 30px;
+  }
   .btc_container {
     @include outer-container;
     @include media($mobile);
     background-color: $lightblack;
-    margin-top: 20px;
     margin-bottom: 20px;
-    @include border;
+    // @include border;
+    border-top: solid 4px $purple;
     .btc_chart {
       @include span-columns(8);
       height: 350px; 
-      @include border; 
+      // @include border; 
       @include media($mobile) {
         display: none;
       }
@@ -198,7 +262,7 @@ li {
       .btc_info {
         @include span-columns(12);
         height: 25px;
-        text-align: center;
+        // text-align: center;
         border-bottom: solid 1px white;
       }
       #btc_bid_action {
@@ -283,11 +347,11 @@ li {
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
-    @include border;
+    // @include border;
     .doge_chart {
       @include span-columns(8);
       height: 350px; 
-      @include border;
+      // @include border;
       @include media($mobile) {
         display: none;
       }
@@ -305,7 +369,7 @@ li {
       .doge_info {
         @include span-columns(12);
         height: 25px;
-        text-align: center;
+        // text-align: right;
         border-bottom: solid 1px white;
       }
       #doge_bid_action {
@@ -390,11 +454,11 @@ li {
     background-color: $lightblack;
     margin-top: 20px;
     margin-bottom: 20px;
-    @include border;
+    // @include border;
     .ltc_chart {
       @include span-columns(8);
       height: 350px; 
-      @include border;
+      // @include border;
       @include media($mobile) {
         display: none;
       }
@@ -411,7 +475,7 @@ li {
       .ltc_info {
         @include span-columns(12);
         height: 25px;
-        text-align: center;
+        // text-align: center;
         border-bottom: solid 1px white;
       }
       #ltc_bid_action {
@@ -602,13 +666,23 @@ li {
 }
 
 .formtext {
-  color: white;
+  float: left;
+  color: #90ee7e;
+  font-family: Montserrat;
+  font-size: 20px;
+  text-align: center;
 }
 
-input radio {
-  display: inline;
+select {
+  float: right;
 }
 
+.currency_title {
+  color: $purple;
+  text-align: right;
+  font-family: Montserrat;
+  font-size: 18px;
+}
   // <div id="login_inner_shell">
   //                   <form class="form1" >
   //                       <input class="signup" id="uname" name="uname" placeholder="Name" type=

@@ -59,33 +59,46 @@
         </div>
         <div id="alertspace_container">
             <div id="alertspace">
-                <div id="alert_left_container">
+                <div id="alert_top_container">
                     <form id="setalerts">
+
                         <div id="alert_when">
                             <p class="formtext">When</p>
-                            <input type="radio" name="currency" class="test" value="BTC">Bitcoin<br>
-                            <input type="radio" name="currency" class="test"value="LTC">Litecoin<br>
-                            <input type="radio" name="currency" class="test"value="DOGE">Dogecoin
+                            <select class="currency">
+                                <option value="BTC">Bitcoin</option>
+                                <option value="LTC">Litecoin</option>
+                                <option value="DOGE">Dogecoin</option>
+                            </select>
                         </div>
+
                         <div id="alert_params">
                             <p class="formtext">Passes</p>
-                            <input type="radio" name="limit" value="above">Above<br>
-                            <input type="radio" name="limit" value="below">Below<br>
+                            <select class="limit">
+                                <option value="above">Above</option>
+                                <option value="below">Below</option>
+                            </select>
                         </div>
+
                         <div id="alert_price">
                             <p class="formtext">Price (USD)</p>
-                            <input type="text" name="price">
+                            <input type="text" class="price_text" name="price">
                         </div>
+
                         <div id="alert_type">
                             <p class="formtext">Send</p>
+                            <select class="alert_type">
+                                <option value="sms">Text</option>
+                                <option value="email">Email</option>
+                            </select>
+                        </div>
 
-                        </div>
                         <div id="alert_set">
-                            <input type="submit" value="Set Alert">
+                            <input type="submit" class="set_alert" value="Set Alert">
                         </div>
+
                     </form>
                 </div>
-                <div id="alert_right_container">
+                <div id="alert_bottom_container">
 
                 </div>
             </div>
@@ -103,6 +116,12 @@
             Binoculars designed by <a href="http://www.thenounproject.com/creatoridimmagine">Creatorid'immagine</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
         </footer>
     </div>
+
+    <script type="text/x-handlebars-template" id="saved_alerts">
+            <div class="alert_stream"><p class="formtext">Alert when {{currency}} Passes {{limit}} ${{price}}</p></div>
+            
+
+    </script>
 
     <script type="text/x-handlebars-template" id="btc_feed">
              <li class="value_feed">{{value}}</li>
@@ -152,10 +171,11 @@
     </script>
 
     <script type="text/x-handlebars-template" id="currency_template">
+        <div class="spacer"></div>
         <div class="btc_container">
             <div class="btc_chart"></div>
             <div class="btc_feed">
-                <div class="btc_info">Bitcoin Prices (USD)</div>
+                <div class="btc_info"><p class="currency_title">Bitcoin Prices (USD)</p></div>
                 
                 <div id="btc_bid_action">
                     <div id="btc_bid_title">Bid</div>
@@ -186,7 +206,7 @@
         <div class="ltc_container">
             <div class="ltc_chart"></div>
             <div class="ltc_feed">
-                <div class="ltc_info">Litecoin Prices (USD)</div>
+                <div class="ltc_info"><p class="currency_title">Litecoin Prices (USD)</p></div>
                 
                 <div id="ltc_bid_action">
                     <div id="ltc_bid_title">Bid</div>
@@ -217,7 +237,7 @@
         <div class="doge_container">
             <div class="doge_chart"></div>
             <div class="doge_feed">
-                <div class="doge_info">Dogecoin Prices (USD)</div>
+                <div class="doge_info"><p class="currency_title">Dogecoin Prices (USD)</p></div>
                 
                 <div id="doge_bid_action">
                     <div id="doge_bid_title">Bid</div>

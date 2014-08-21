@@ -5,6 +5,8 @@
  */
 
 // Load the fonts
+
+
 Highcharts.createElement('link', {
    href: 'http://fonts.googleapis.com/css?family=Unica+One',
    rel: 'stylesheet',

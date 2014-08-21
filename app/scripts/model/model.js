@@ -7,7 +7,8 @@ var Alert = Parse.Object.extend ({
 	defaults: {
 		currency: '',
 		limit: '',
-		price: ''
+		price: '',
+		alert_type: ''
 
 	}
 
