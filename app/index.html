@@ -45,35 +45,49 @@
                     <img class="binos_header" src="../images/icon_7215.png">
                     <p class="header_name">CoinSpy</p>
                 </div>
-                
-            </header>
-            <div id="head_one">
-                <div class="head_left">
-                </div>
-                <div class="head_center"><button class="alerts">Alerts</button>
-                </div>
                 <div class="head_right">
                     <button class="logout">Logout</button>
                     <div class="userfield"></div>
-                    
-                    
                 </div>
+            </header>
+            <div id="head_one">
+                <div class="head_left">
+                    <button class="alerts">Alerts</button>
+                </div>
+                
             </div>
         </div>
         <div id="alertspace_container">
             <div id="alertspace">
-                <form id="setalerts">
-                    <p class="formtext">If</p>
-                    <input type="radio" name="currency" id="" value="BTC">Bitcoin<br>
-                    <input type="radio" name="currency" value="LTC">Litecoin<br>
-                    <input type="radio" name="currency" value="DOGE">Dogecoin
-                    <p class="formtext">Passes</p>
-                    <input type="radio" name="limit" value="above">Above<br>
-                    <input type="radio" name="limit" value="below">Below<br>
-                    <p class="formtext">The Price Of</p>
-                    <input type="text" name="price">
-                    <input type="submit" value="Set Alert">
-                </form>
+                <div id="alert_left_container">
+                    <form id="setalerts">
+                        <div id="alert_when">
+                            <p class="formtext">When</p>
+                            <input type="radio" name="currency" class="test" value="BTC">Bitcoin<br>
+                            <input type="radio" name="currency" class="test"value="LTC">Litecoin<br>
+                            <input type="radio" name="currency" class="test"value="DOGE">Dogecoin
+                        </div>
+                        <div id="alert_params">
+                            <p class="formtext">Passes</p>
+                            <input type="radio" name="limit" value="above">Above<br>
+                            <input type="radio" name="limit" value="below">Below<br>
+                        </div>
+                        <div id="alert_price">
+                            <p class="formtext">Price (USD)</p>
+                            <input type="text" name="price">
+                        </div>
+                        <div id="alert_type">
+                            <p class="formtext">Send</p>
+
+                        </div>
+                        <div id="alert_set">
+                            <input type="submit" value="Set Alert">
+                        </div>
+                    </form>
+                </div>
+                <div id="alert_right_container">
+
+                </div>
             </div>
         </div>
     </div>

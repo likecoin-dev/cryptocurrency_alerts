@@ -13,6 +13,9 @@ $ask: #90ee7e;
 $last: #f45b5b;
 $green: #90ee7e;
 $red: #f45b5b;
+$purple: #857dc0; 
+$lighterblue: #60A0B9;
+$lightgrey: #9696A5;
 
 $mobile: new-breakpoint(max-width 700px 4);
 
@@ -33,15 +36,15 @@ li {
   #header_container {
     width: 100%;
     background-color: $darkblack;
-    @include border;
+    border-bottom: solid 4px $lighterblue;
+    // @include border;
     header {
       @include outer-container;
-      @include border;
-      height: 75px;
+      // @include border;
       background-color: $darkblack;
       #header_name {
-        @include span-columns(12);
-        @include border;
+        @include span-columns(8);
+        // @include border;
         height: 65px;
         margin-top: 10px;
         .binos_header {
@@ -59,28 +62,11 @@ li {
           margin-left: 10px;
         }
       }
-    }
-    #head_one {
-      @include outer-container;
-      height: 50px;
-      background-color: $darkblack;
-      @include border;
-      text-align: center;
-      color: white;
-      .head_left {
-        @include span-columns(4);
-        @include border;
-        height: 50px;
-      }
-      .head_center {
-        @include span-columns(4);
-        @include border;
-        height: 50px;
-      }
       .head_right {
         @include span-columns(4);
-        @include border;
+        // @include border;
         height: 25px;
+        margin-top: 18px;
         .userfield {
           color: white;
           float: right;
@@ -92,12 +78,37 @@ li {
           cursor: pointer;
           font-size: 16px;
           color: #fff;
-          border: 1px solid #0f0;
           margin: 0px;
           padding: 0px;
+          margin-top: 4px;
+          margin-left: 9px;
         }
-
-        
+      }
+    }
+    #head_one {
+      @include outer-container;
+      height: 50px;
+      background-color: $darkblack;
+      // @include border;
+      text-align: center;
+      color: white;
+      .head_left {
+        @include span-columns(12);
+        // @include border;
+        height: 50px;
+        .alerts {
+          float: left;
+          background: none;
+          cursor: pointer;
+          font-size: 22px;
+          font-family: Montserrat;
+          color: $lighterblue;
+          margin: 0px;
+          padding: 0px;
+          margin-top: 16px;
+          margin-left: 9px;
+          // border-bottom: solid 3px white;
+        }
       }
     }
   }
@@ -111,6 +122,47 @@ li {
       min-height: 175px;
       background-color: $lightblack;
       @include border;
+      #alert_left_container{
+        @include span-columns(4);
+        // background-color: $lightgrey;
+        // text-align: left;
+        color: $green;
+        .formtext {
+          color: $green;
+          font-family: Montserrat;
+          font-size: 22px;
+          // font-weight: bold;
+          text-align: center;
+        }
+        #alert_when {
+          width: 100%;
+          @include border;
+          // height: 25px;
+        }
+        #alert_params {
+          width: 100%;
+          @include border;
+          // height: 25px;
+        }
+        #alert_price {
+          width: 100%;
+          @include border;
+          // height: 25px;
+        }
+        #alert_type {
+          width: 100%;
+          @include border;
+          // height: 25px;
+        }
+        #alert_set {
+          width: 100%;
+          @include border;
+          // height: 25px;
+        }
+      }
+      #alert_right_container {
+        @include span-columns(8);
+      }
     }
   }
 }
@@ -551,6 +603,10 @@ li {
 
 .formtext {
   color: white;
+}
+
+input radio {
+  display: inline;
 }
 
   // <div id="login_inner_shell">
