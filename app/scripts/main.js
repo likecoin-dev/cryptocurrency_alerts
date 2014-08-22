@@ -35,6 +35,10 @@ $('#setalerts').on('submit', function (e) {
     success: function() {
     	console.log("alert saved");
       $('#setalerts').trigger('reset');
+
+      var template = Handlebars.compile($('#saved_alerts').html());
+      var rendered = template(alert_trigger.toJSON());
+      $("#alert_bottom_container").append(rendered);
     }
   });
 });

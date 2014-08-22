@@ -8,7 +8,7 @@ var HomeView = Backbone.View.extend({
 
 	initialize: function() {
 		this.render();
-    console.log("home page initialized");
+		
 	},
 
 	render: function() {
