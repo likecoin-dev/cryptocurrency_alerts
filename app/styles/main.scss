@@ -36,7 +36,7 @@ li {
   #header_container {
     width: 100%;
     background-color: $darkblack;
-    border-bottom: solid 4px $lighterblue;
+    border-bottom: solid 8px white;
 
     // @include border;
     header {
@@ -83,6 +83,8 @@ li {
           padding: 0px;
           margin-top: 4px;
           margin-left: 9px;
+          height: 17px;
+          text-decoration: underline;
         }
       }
     }
@@ -98,16 +100,18 @@ li {
         // @include border;
         height: 50px;
         .alerts {
-          float: left;
+          float: right;
           background: none;
           cursor: pointer;
           font-size: 22px;
           font-family: Montserrat;
-          color: $lighterblue;
-          margin: 0px;
-          padding: 0px;
+          color: white;
+          margin: 10px;
+          padding: 5px;
           margin-top: 16px;
           margin-left: 9px;
+          border: none;
+          text-decoration: underline;
           // border-bottom: solid 3px white;
         }
       }
@@ -117,62 +121,70 @@ li {
     // display: none;
     width: 100%;
     background-color: $lightblack;
-    @include border;
+    // @include border;
     #alertspace {
       @include outer-container;
-      min-height: 175px;
       background-color: $lightblack;
-      @include border;
+      // @include border;
       #alert_top_container{
         @include span-columns(12);
+        margin-top: 10px;
         // background-color: $lightgrey;
         // text-align: left;
-        @include border;
-        color: $green;
+        // @include border;
         .formtext {
-          color: $green;
+          color: white;
           font-family: Montserrat;
           font-size: 20px;
-          // font-weight: bold;
           text-align: center;
         }
         #alert_when {
           @include span-columns(2.5);
-          @include border;
-          // height: 25px;
-
+          // @include border;
+          height: 60px;
+          select {
+            margin-top: 14px;
+          }
         }
         #alert_params {
           @include span-columns(2.5);
-          @include border;
-          // height: 25px;
+          // @include border;
+          height: 60px;
+          select {
+            margin-top: 14px;
+          }
         }
         #alert_price {
           @include span-columns(2.5);
-          @include border;
-          // height: 25px;
+          // @include border;
+          height: 60px;
           .price_text {
             float: right;
             width: 80px;
             height: 30px;
+            margin-top: 12px;
           }
         }
         #alert_type {
           @include span-columns(2.5);
-          @include border;
-          // height: 25px;
+          // @include border;
+          height: 60px;
+          select {
+            margin-top: 14px;
+          }
         }
         #alert_set {
-          @include span-columns(2.0);
-          @include border;
-          // height: 25px;
+          @include span-columns(2);
+          // @include border;
+          height: 60px;
           text-align: center;
           .set_alert {
-            background: $lighterblue;
+            background: none;
+            border: solid 1px white;
             cursor: pointer;
             font-size: 18px;
             font-family: Montserrat;
-            color: $green;
+            color: white;
             margin: 8px;
             padding: 8px;
             // border: $green;
@@ -181,51 +193,46 @@ li {
       }
       #alert_bottom_container {
         @include span-columns(12);
-        @include border;
-        .alert_when {
-          @include span-columns(2.5);
-          @include border;
-          // height: 25px;
-        }
-        .alert_params {
-          @include span-columns(2.5);
-          @include border;
-          // height: 25px;
-        }
-        .alert_price {
-          @include span-columns(2.5);
-          @include border;
-          // height: 25px;
-          // .price_text {
-          //   float: right;
-          //   width: 80px;
-          //   height: 30px;
-          // }
-        }
-        .alert_type {
-          @include span-columns(2.5);
-          @include border;
-          // height: 25px;
-        }
-        .alert_set {
-          @include span-columns(2.0);
-          @include border;
-          // height: 25px;
-          text-align: center;
-        }
+        // @include border;
       }
     }
   }
 }
 
-.at {
-  color: white;
-  float: right;
-  height: 35px;
-  width: 80px;
-  @include border;
+.alert_stream {
+  width: 100%;
+  border-bottom: solid 4px white;
+  clear: both;
+  .formtexttwo {
+    color: white;
+    font-family: Montserrat;
+    font-size: 20px;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
+  } 
+  .x {
+    background: none;
+    cursor: pointer;
+    margin: 8px;
+    padding: 8px;
+    // border: $green;
+    float: right;
+    margin-top: 9px;
+    .fa-times {
+      color: white;
+      font-size: 20px;
+    }
+  }
 }
 
+// .at {
+//       color: white;
+//       float: right;
+//       height: 35px;
+//       width: 80px;
+//       @include border;
+//     }
 
 #main {
   width: 100%;
@@ -241,7 +248,7 @@ li {
     background-color: $lightblack;
     margin-bottom: 20px;
     // @include border;
-    border-top: solid 4px $purple;
+    // border-top: solid 4px white;
     .btc_chart {
       @include span-columns(8);
       height: 350px; 
@@ -254,7 +261,7 @@ li {
       @include span-columns(4);
       height: 350px;
       color: white;
-      @include border;
+      // @include border;
       background-color: $darkblack;
       @include media($mobile) {
         @include span-columns(12);
@@ -263,27 +270,27 @@ li {
         @include span-columns(12);
         height: 25px;
         // text-align: center;
-        border-bottom: solid 1px white;
+        // border-bottom: solid 1px white;
       }
       #btc_bid_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $bid;
         text-align: center;
         #btc_bid_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #btc_bid_color {
           @include span-columns(1);
-          @include border;
+          // @include border;
           height: 300px;
         }
         #btc_bid_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -292,23 +299,23 @@ li {
       }
       #btc_ask_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $ask;
         text-align: center;
         #btc_ask_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #btc_ask_color {
           @include span-columns(1);
-          @include border; 
+          // @include border;
           height: 300px;
         }
         #btc_ask_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -317,23 +324,23 @@ li {
       }
       #btc_last_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $last;
         text-align: center;
         #btc_last_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #btc_last_color {
           @include span-columns(1);
-          @include border; 
+          // @include border; 
           height: 300px;
         }
         #btc_last_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -360,7 +367,7 @@ li {
       @include span-columns(4);
       height: 350px;
       color: white;
-      @include border;
+      // @include border;
       background-color: $darkblack;
       @include media($mobile) {
         @include span-columns(12);
@@ -370,27 +377,27 @@ li {
         @include span-columns(12);
         height: 25px;
         // text-align: right;
-        border-bottom: solid 1px white;
+        // border-bottom: solid 1px white;
       }
       #doge_bid_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $bid;
         text-align: center;
         #doge_bid_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #doge_bid_color {
           @include span-columns(1);
-          @include border;
+          // @include border;
           height: 300px;
         }
         #doge_bid_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -399,23 +406,23 @@ li {
       }
       #doge_ask_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $ask;
         text-align: center;
         #doge_ask_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #doge_ask_color {
           @include span-columns(1);
-          @include border; 
+          // @include border; 
           height: 300px;
         }
         #doge_ask_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -424,23 +431,23 @@ li {
       }
       #doge_last_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $last;
         text-align: center;
         #doge_last_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #doge_last_color {
           @include span-columns(1);
-          @include border; 
+          // @include border; 
           height: 300px;
         }
         #doge_last_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -467,7 +474,7 @@ li {
       @include span-columns(4);
       height: 350px;
       color: white;
-      @include border;
+      // @include border;
       background-color: $darkblack;
       @include media($mobile) {
         @include span-columns(12);
@@ -476,27 +483,27 @@ li {
         @include span-columns(12);
         height: 25px;
         // text-align: center;
-        border-bottom: solid 1px white;
+        // border-bottom: solid 1px white;
       }
       #ltc_bid_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $bid;
         text-align: center;
         #ltc_bid_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #ltc_bid_color {
           @include span-columns(1);
-          @include border;
+          // @include border;
           height: 300px;
         }
         #ltc_bid_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -505,23 +512,23 @@ li {
       }
       #ltc_ask_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $ask;
         text-align: center;
         #ltc_ask_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #ltc_ask_color {
           @include span-columns(1);
-          @include border; 
+          // @include border; 
           height: 300px;
         }
         #ltc_ask_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -530,23 +537,23 @@ li {
       }
       #ltc_last_action {
         @include span-columns(4);
-        @include border; 
+        // @include border; 
         height: 325px;
         color: $last;
         text-align: center;
         #ltc_last_title {
           @include span-columns(12);
-          border-bottom: solid 1px white;
+          // border-bottom: solid 1px white;
           height: 25px;
         }
         #ltc_last_color {
           @include span-columns(1);
-          @include border; 
+          // @include border; 
           height: 300px;
         }
         #ltc_last_action_container {
           @include span-columns(11);
-          @include border;
+          // @include border;
           height: 300px;
           text-overflow: ellipsis;
           overflow: hidden;
@@ -568,7 +575,7 @@ li {
     background-color: white;
     #login_head {
       @include outer-container;
-      @include border; 
+      // @include border; 
       height: 70px;
       .binos {
         height: 70px;
@@ -639,9 +646,6 @@ li {
   }
 }
 
-
-
-
 #footer_container {
   width: 100%;
   background-color: $darkblack;
@@ -667,10 +671,11 @@ li {
 
 .formtext {
   float: left;
-  color: #90ee7e;
-  font-family: Montserrat;
+  color: white;
+  font-family: Unica One;
   font-size: 20px;
   text-align: center;
+  margin-top: 10px;
 }
 
 select {
@@ -678,10 +683,11 @@ select {
 }
 
 .currency_title {
-  color: $purple;
-  text-align: right;
+  color: white;
+  text-align: center;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 14px;
+  margin: 5px;
 }
   // <div id="login_inner_shell">
   //                   <form class="form1" >

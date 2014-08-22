@@ -44,16 +44,17 @@ query.equalTo("user", currentUser);
 query.find({
   success: function(results) {
     // alert("Successfully retrieved ");
+    var template = Handlebars.compile($("#saved_alerts").html());
     _.each(results, function (a) {
 
-      var template = Handlebars.compile($("#saved_alerts").html());
+      
 
-      var currency = a.get("currency");
-      var limit = a.get("limit");
-      var price = a.get("price");
-      var alert_type = a.get("alert_type");
+      // var currency = a.get("currency");
+      // var limit = a.get("limit");
+      // var price = a.get("price");
+      // var alert_type = a.get("alert_type");
 
-      console.log(currency, limit, price, alert_type);
+      // console.log(currency, limit, price, alert_type);
 
 
       $("#alert_bottom_container").prepend(template(a.toJSON()));
@@ -64,5 +65,9 @@ query.find({
     alert("Error");
   }
 });
+
+$('.x').on('click', function () {
+
+})
 
 

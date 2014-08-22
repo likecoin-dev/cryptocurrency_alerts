@@ -19,9 +19,12 @@
 
     <!-- google font: Montserrat -->
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
 
     <!-- animate.css -->
     <link rel="stylesheet" href="../bower_components/animate.css/animate.css"/>
+
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css"/>
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="../bower_components/modernizr/modernizr.js"></script>
@@ -118,9 +121,12 @@
     </div>
 
     <script type="text/x-handlebars-template" id="saved_alerts">
-            <div class="alert_stream"><p class="formtext">Alert when {{currency}} Passes {{limit}} ${{price}}</p></div>
-            
-
+            <div class="alert_stream">
+                <p class="formtexttwo">Alert when {{currency}} Passes {{limit}} ${{price}}</p>
+                <button class="x" id="{{objectId}}">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
     </script>
 
     <script type="text/x-handlebars-template" id="btc_feed">
