@@ -62,12 +62,31 @@ query.find({
     });
   },
   error: function(error) {
-    alert("Error");
+    // alert("Error");
   }
 });
 
-$('.x').on('click', function () {
-
-})
+$(document).on('click', ".x", function () {
+  var self = $(this);
+  var id = $(this).attr("id");
+  query.equalTo("objectId", id);
+  query.find({
+    success: function(results) {
+      results[0].destroy({
+        success: function(myObject) {
+          // The object was deleted from the Parse Cloud.
+          self.parent().fadeOut();
+        },
+        error: function(myObject, error) {
+          // The delete failed.
+          // error is a Parse.Error with an error code and description.
+        }
+      });
+    },
+    error: function(error) {
+      alert("Error");
+    }
+  });
+});
 
 

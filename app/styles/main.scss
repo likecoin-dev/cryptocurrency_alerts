@@ -85,6 +85,7 @@ li {
           margin-left: 9px;
           height: 17px;
           text-decoration: underline;
+          outline: 0;
         }
       }
     }
@@ -112,6 +113,7 @@ li {
           margin-left: 9px;
           border: none;
           text-decoration: underline;
+          outline: 0;
           // border-bottom: solid 3px white;
         }
       }
@@ -187,6 +189,7 @@ li {
             color: white;
             margin: 8px;
             padding: 8px;
+            outline: 0;
             // border: $green;
           }
         }
@@ -687,7 +690,8 @@ select {
   text-align: center;
   font-family: Montserrat;
   font-size: 14px;
-  margin: 5px;
+  margin: 6px;
+  // padding: 10px;
 }
   // <div id="login_inner_shell">
   //                   <form class="form1" >
