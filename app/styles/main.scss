@@ -651,13 +651,14 @@ li {
 
 #footer_container {
   width: 100%;
-  background-color: $darkblack;
-  @include border;
+  // background-color: $darkblack;
+  // @include border;
   footer {
     @include outer-container;
     min-height: 75px;
     background-color: $darkblack;
-    @include border;
+    // @include border;
+    color: $darkblack;
   }
 }
 
